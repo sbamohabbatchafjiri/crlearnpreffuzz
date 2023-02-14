@@ -54,7 +54,7 @@
 #include <sys/ioctl.h>
 #include <sys/file.h>
 
-#include <Python.h>
+#include <python3.8/Python.h>
 
 #if defined(__APPLE__) || defined(__FreeBSD__) || defined (__OpenBSD__)
 #  include <sys/sysctl.h>
