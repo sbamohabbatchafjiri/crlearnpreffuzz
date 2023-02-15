@@ -72,7 +72,7 @@ afl-as: afl-as.c afl-as.h $(COMM_HDR) | test_x86
 
 afl-fuzz: afl-fuzz.c $(COMM_HDR) | test_x86
 	$(CC) $(CFLAGS) $@.c -o $@ $(LDFLAGS)
-	ln -s /bin/python2.7 /usr/bin/python
+  do ln -s /bin/python2.7 /usr/bin/python
 
 afl-showmap: afl-showmap.c $(COMM_HDR) | test_x86
 	$(CC) $(CFLAGS) $@.c -o $@ $(LDFLAGS)
