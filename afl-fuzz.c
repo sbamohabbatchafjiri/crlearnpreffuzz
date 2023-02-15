@@ -1000,7 +1000,7 @@ static void generate_model(struct queue_entry* q){
   if ((tm_now = localtime(&now_time)) == NULL) PFATAL("Unable to transfer seconds to local time.");
 
   commanding = ck_alloc((45+calculate_length(knowledge_file_name)+calculate_length(q->mname)+calculate_length(time_file_name))*sizeof(u8));
-  sprintf(commanding, "python ./learning_engine.py %s %s %s", knowledge_file_name, q->mname, time_file_name);
+  sprintf(commanding, "python ./out/learning_engine.py %s %s %s", knowledge_file_name, q->mname, time_file_name);
   system(commanding);
   q->has_model = 1;
 
