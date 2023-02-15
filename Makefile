@@ -28,7 +28,7 @@ PROGS       = afl-gcc afl-fuzz afl-showmap afl-tmin afl-gotcpu afl-analyze
 SH_PROGS    = afl-plot afl-cmin afl-whatsup
 
 CFLAGS     ?= -O3 -funroll-loops
-CFLAGS     += -Wall -D_FORTIFY_SOURCE=2 -g -Wno-pointer-sign \
+CFLAGS     += -Wall -D_FORTIFY_SOURCE=2 -g -Wno-pointer-sign -I /usr/include/python2.7/\
 	      -DAFL_PATH=\"$(HELPER_PATH)\" -DDOC_PATH=\"$(DOC_PATH)\" \
 	      -DBIN_PATH=\"$(BIN_PATH)\"
 LDFLAGS += -lm
@@ -72,7 +72,6 @@ afl-as: afl-as.c afl-as.h $(COMM_HDR) | test_x86
 
 afl-fuzz: afl-fuzz.c $(COMM_HDR) | test_x86
 	$(CC) $(CFLAGS) $@.c -o $@ $(LDFLAGS)
-	do ln -s /bin/python2.7 /usr/bin/python
 
 afl-showmap: afl-showmap.c $(COMM_HDR) | test_x86
 	$(CC) $(CFLAGS) $@.c -o $@ $(LDFLAGS)
