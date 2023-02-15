@@ -28,7 +28,7 @@ PROGS       = afl-gcc afl-fuzz afl-showmap afl-tmin afl-gotcpu afl-analyze
 SH_PROGS    = afl-plot afl-cmin afl-whatsup
 
 CFLAGS     ?= -O3 -funroll-loops
-CFLAGS     += -Wall -D_FORTIFY_SOURCE=2 -g -Wno-pointer-sign ln -s /bin/python2.7 /usr/bin/python\
+CFLAGS     += -Wall -D_FORTIFY_SOURCE=2 -g -Wno-pointer-sign python-config --cflags\
 	      -DAFL_PATH=\"$(HELPER_PATH)\" -DDOC_PATH=\"$(DOC_PATH)\" \
 	      -DBIN_PATH=\"$(BIN_PATH)\"
 LDFLAGS += -lm
