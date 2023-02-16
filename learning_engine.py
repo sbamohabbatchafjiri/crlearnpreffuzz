@@ -142,7 +142,7 @@ def get_hardcode(testcases):
 
 def splice_testcases(testcases, hardcode):
     order1 = hardcode.keys()
-    sort(order1)
+    sorted(order1)
     order2 = []
     for i in order1:
         order2.append(i+len(hardcode[i]))
@@ -308,7 +308,7 @@ def get_regular(testcases, hardcode):
     tempReg = []
     tempPos = []
     tempKey = hardcode.keys()
-    sort(tempKey)
+    sorted(tempKey)
     if len(splice) > 0:
         time_limit = 15.0 / len(splice)
     for i in range(0,len(splice)):
@@ -515,7 +515,7 @@ def generate_new_reg_from_two_regs(reg1,pos1,reg2,pos2):
     lastindex1 = 0
     lastindex2 = 0
     tempKey = hardcode.keys()
-    sort(tempKey)
+    sorted(tempKey)
     for i in range(0,numsOfSplice):
         index1 = newPos1.index(tempKey[i])
         index2 = newPos2.index(tempKey[i])
