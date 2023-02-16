@@ -614,7 +614,7 @@ def write_model_to_file(filename, path):
 #Opening files
 def open_file(filename):
     try:
-        fl = open(filename, 'r', encoding='utf-8')
+        fl = open(filename, 'r', encoding='utf-8', errors='replace')
     except IOError:
         sys_error("IOError: open file failed! Couldn't find file or Permission denied")
     else:
