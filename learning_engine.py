@@ -92,7 +92,7 @@ class PathInformation:
             tempPos = []
             lastReg = self.reg
             lastPos = self.pos
-            print "[*] Getting format."
+            print("[*] Getting format.")
             if self.nums * self.maxLength * self.maxLength > MAXCACULATE:
                 tempNum = MAXCACULATE / (self.maxLength * self.maxLength)
                 tempReg, tempPos = get_format(self.testcases[0:tempNum])
@@ -548,7 +548,7 @@ def generate_new_reg_from_two_regs(reg1,pos1,reg2,pos2):
 
 #Printing error message and shuting down programs
 def sys_error(message):
-    print message
+    print (message)
     exit(1)
 
 #Creating file to store information
@@ -609,7 +609,7 @@ def write_model_to_file(filename, path):
         for i in range(0, len(path.reg)):
             fl.write('Position:{position}\nLength:{length}\nRegular:{regular}\n'.format(position=path.pos[i],length=len(path.reg[i]),regular=path.reg[i]))
 
-        print "[*] Writing model to model file."
+        print("[*] Writing model to model file.")
 
 #Opening files
 def open_file(filename):
@@ -746,10 +746,10 @@ def generate_pathnodes_and_process(knowledgeFile,lastModelFileName):
 #Handling knowledge files.
 def handle_knowledge_file(knowledgeFileName, modelFileName):
     knowledgeFile = open_file(knowledgeFileName)  #Opening knowledge files
-    print "[*] Handling knowledge file."
+    print("[*] Handling knowledge file.")
     path = generate_pathnodes_and_process(knowledgeFile, modelFileName)
 
-    print "[*] Generating model."
+    print("[*] Generating model.")
     path.analysis_feature()
 
     return path
@@ -769,7 +769,7 @@ def main(argv):
         timeFile = argv[2]
     else:
         sys_error("")
-    print "[*] Starting python script."
+    print("[*] Starting python script.")
     current_time = time.time()
     #information_file = create_information_file(modelFile)
     path = handle_knowledge_file(knowledgeFile,  modelFile)
