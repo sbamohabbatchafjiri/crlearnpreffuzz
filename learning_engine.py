@@ -141,7 +141,7 @@ def get_hardcode(testcases):
     return hardcode
 
 def splice_testcases(testcases, hardcode):
-    order1 = hardcode.keys()
+    order1 = list(hardcode.keys())
     sorted(order1)
     order2 = []
     for i in order1:
@@ -307,7 +307,7 @@ def get_regular(testcases, hardcode):
     splice = splice_testcases(testcases,hardcode)
     tempReg = []
     tempPos = []
-    tempKey = hardcode.keys()
+    tempKey = list(hardcode.keys())
     sorted(tempKey)
     if len(splice) > 0:
         time_limit = 15.0 / len(splice)
