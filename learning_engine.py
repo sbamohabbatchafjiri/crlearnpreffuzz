@@ -95,7 +95,7 @@ class PathInformation:
             print("[*] Getting format.")
             if self.nums * self.maxLength * self.maxLength > MAXCACULATE:
                 tempNum = MAXCACULATE / (self.maxLength * self.maxLength)
-                tempReg, tempPos = get_format(self.testcases[0:tempNum])
+                tempReg, tempPos = get_format(self.testcases[int(0):int(tempNum)])
             else:
                 tempReg, tempPos = get_format(self.testcases)
             if self.reg != []:
