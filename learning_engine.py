@@ -514,7 +514,7 @@ def generate_new_reg_from_two_regs(reg1,pos1,reg2,pos2):
     numsOfSplice = len(hardcode.keys())
     lastindex1 = 0
     lastindex2 = 0
-    tempKey = hardcode.keys()
+    tempKey = list(hardcode.keys())
     sorted(tempKey)
     for i in range(0,numsOfSplice):
         index1 = newPos1.index(tempKey[i])
